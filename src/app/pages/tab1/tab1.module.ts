@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../components/components.module';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ import { ExploreContainerComponentModule } from 'src/app/explore-container/explo
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    ComponentsModule
   ],
   declarations: [Tab1Page]
 })
