@@ -24,3 +24,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.text-primary{
+  color: var(var(--ion-color-primary));
+}
+
+.source-article-name{
+  font-size: 12px;
+}

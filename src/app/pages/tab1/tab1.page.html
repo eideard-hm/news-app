@@ -1,17 +1,43 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" mode="ios" class="ion-no-border">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Heraldo's News
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" mode="ios" class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Heraldo's News</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let article of articles; let i = index">
+        <ion-card>
+
+          <ion-card-subtitle class="ion-margin">
+            <span class="text-primary">{{ i + 1 }}. </span>
+            <span class="source-article-name">{{ article.source.name }}</span>
+          </ion-card-subtitle>
+
+          <ion-card-title class="ion-padding-horizontal ion-margin-bottom">
+            {{ article.title }}
+          </ion-card-title>
+
+          <ion-img
+            *ngIf="article.urlToImage"
+            [src] = "article.urlToImage"
+          ></ion-img>
+
+          <ion-card-content *ngIf="article.description">
+            <p>{{ article.description }}</p>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
