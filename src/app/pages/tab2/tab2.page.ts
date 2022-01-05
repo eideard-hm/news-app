@@ -35,4 +35,19 @@ export class Tab2Page implements OnInit {
       .getTopHeadlinesByCategory(category.detail.value)
       .subscribe((data) => (this.articles = [...data]));
   }
+
+  loadData(e: any) {
+    this.newsService.getTopHeadlinesByCategory(this.selectedCategory, true)
+    .subscribe(articles => {
+
+      if(articles[articles.length -1] === this.articles[this.articles.length -1]){
+        e.target.disabled = true;
+        return;
+      }
+
+      this.articles = articles;
+      e.target.complete();
+    });
+
+  }
 }
