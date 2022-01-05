@@ -7,6 +7,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
+// puglins
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +20,10 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    InAppBrowser,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
