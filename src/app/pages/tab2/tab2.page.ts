@@ -25,7 +25,7 @@ export class Tab2Page implements OnInit {
   ngOnInit(): void {
     this.newsService
       .getTopHeadlinesByCategory(this.selectedCategory)
-      .subscribe((data) => this.articles = [...this.articles, ...data]);
+      .subscribe((data) => (this.articles = [...data]));
   }
 
   segmentChanged(category: any) {
@@ -33,6 +33,6 @@ export class Tab2Page implements OnInit {
 
     this.newsService
       .getTopHeadlinesByCategory(category.detail.value)
-      .subscribe((data) => this.articles = [...data]);
+      .subscribe((data) => (this.articles = [...data]));
   }
 }
